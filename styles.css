@@ -7,7 +7,92 @@
 
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background: lightpink;
+  background: #b6ffc2;
+}
+
+header {
+  background: linear-gradient(#f1e8b8, #ffc2cc, #a5ccf3, #f8b6a0);
 }
 
 /* Styles for element types */
+
+/* Nav bar style */
+
+.container {
+  width: 100%;
+  min-height: 10vh;
+  padding: 0 8%;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+#menu-icon {
+  display: none;
+  cursor: pointer;
+  width: 25px;
+}
+
+nav {
+  flex: 1; /*Each item that has flex 1 has the remaining width of container*/
+  text-align: center;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #36072a;
+  font-size: 1.1vw;
+}
+
+nav ul li a:hover {
+  color: #ff4766;
+}
+
+@media only screen and (max-width: 728px) {
+  /* Nav menu adjusted for screen size */
+  #menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+  }
+
+  #menuList {
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  nav ul {
+    width: 50%;
+    background: linear-gradient(#1195c9, #ff79e2);
+    top: 70px;
+    right: 0;
+    z-index: 2;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+    padding-right: 10px;
+  }
+
+  nav ul li a {
+    color: #fff;
+  }
+
+  nav ul li a:hover {
+    color: #fff;
+    font-weight: bolder;
+  }
+}
