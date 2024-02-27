@@ -75,7 +75,7 @@ nav ul li a:hover {
 
   nav ul {
     width: 50%;
-    background: linear-gradient(#1195c9, #ff79e2);
+    background: linear-gradient(#f1e8b8, #ffc2cc, #a5ccf3, #f8b6a0);
     top: 70px;
     right: 0;
     z-index: 2;
@@ -95,4 +95,82 @@ nav ul li a:hover {
     color: #fff;
     font-weight: bolder;
   }
+}
+
+/* Title section styles */
+#title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: url(img/capybara.jpg) #ffc2cc center left repeat;
+  background-size: 100vw 80vw;
+  /* animation to scroll and change background to css code */
+  animation: title-background 8s 1;
+  height: 30vw;
+}
+
+@keyframes title-background {
+  12.5% {
+    background: url(img/axolotl.jpg) #ffc2cc bottom left;
+    background-size: 100vw 80vw;
+  }
+  25% {
+    background: url(img/axolotl.jpg) #a5ccf3 top left;
+    background-size: 100vw 80vw;
+  }
+  37.5% {
+    background: url(img/fox.webp) #ffc2cc bottom left;
+    background-size: 100vw 67vw;
+  }
+  50% {
+    background: url(img/fox.webp) #a5ccf3 top left;
+    background-size: 100vw 67vw;
+  }
+  62.5% {
+    background: url(img/shark.avif) #ffc2cc bottom left;
+    background-size: 100vw 56vw;
+  }
+  75% {
+    background: url(img/shark.avif) #a5ccf3 top left;
+    background-size: 100vw 56vw;
+  }
+  87.5% {
+    background: url(img/capybara.jpg) #ffc2cc bottom left;
+    background-size: 100vw 80vw;
+  }
+  100% {
+    background: url(img/capybara.jpg) #a5ccf3 center left;
+    background-size: 100vw 80vw;
+  }
+}
+
+#banner {
+  background-color: #a5ccf3;
+  width: 56%;
+  height: 8vw;
+  flex-wrap: wrap;
+  padding: 4vw 2vw 10vw;
+  margin-top: 4vw;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #f8b6a0;
+  background-color: #f8b6a0;
+  color: #36072a;
+  min-width: 7vw;
+  margin: 2vw 0.3vw;
+  padding: 2px;
+  font-size: 1.3vw;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #f1e8b8;
 }
