@@ -8,6 +8,7 @@
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background: #b6ffc2;
+  color: #36072a;
 }
 
 header {
@@ -16,6 +17,22 @@ header {
 
 /* Styles for element types */
 
+/* Common styles */
+.btn {
+  text-decoration: none;
+  border: 2px solid #f8b6a0;
+  background-color: #f8b6a0;
+  color: #36072a;
+  min-width: 10vw;
+  margin: 2vw 0.3vw;
+  padding: 2px;
+  font-size: 1.3vw;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #fc9776;
+}
 /* Nav bar style */
 
 .container {
@@ -60,41 +77,18 @@ nav ul li a:hover {
   color: #ff4766;
 }
 
-@media only screen and (max-width: 728px) {
-  /* Nav menu adjusted for screen size */
-  #menu-icon {
-    display: block;
-    position: absolute;
-    top: 10px;
-  }
-
-  #menuList {
-    overflow: hidden;
-    transition: 0.5s;
-  }
-
-  nav ul {
-    width: 50%;
-    background: linear-gradient(#f1e8b8, #ffc2cc, #a5ccf3, #f8b6a0);
-    top: 70px;
-    right: 0;
-    z-index: 2;
-  }
-
-  nav ul li {
-    display: block;
-    margin: 10px 0;
-    padding-right: 10px;
-  }
-
-  nav ul li a {
-    color: #fff;
-  }
-
-  nav ul li a:hover {
-    color: #fff;
-    font-weight: bolder;
-  }
+/* Back to top button */
+#to-top {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  background-color: #36072a; /* Set a background color */
+  color: #ffc2cc;
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 5px 10px; /* Some padding */
+  border-radius: 10px;
 }
 
 /* Title section styles */
@@ -149,28 +143,84 @@ nav ul li a:hover {
   width: 56%;
   height: 8vw;
   flex-wrap: wrap;
-  padding: 4vw 2vw 10vw;
+  padding: 4vw 2vw 12vw;
   margin-top: 4vw;
 }
 
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  border: 2px solid #f8b6a0;
-  background-color: #f8b6a0;
-  color: #36072a;
-  min-width: 7vw;
-  margin: 2vw 0.3vw;
-  padding: 2px;
-  font-size: 1.3vw;
-  text-align: center;
+/* Capybara */
+#capybara {
+  height: 500px;
 }
 
-.btn:hover {
-  background-color: #f1e8b8;
+/* Responsive webpage styles */
+
+@media only screen and (max-width: 728px) {
+  /* Nav menu adjusted for screen size */
+  #menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+  }
+
+  #menuList {
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  nav ul {
+    width: 50%;
+    background: linear-gradient(#f1e8b8, #ffc2cc, #a5ccf3, #f8b6a0);
+    top: 70px;
+    right: 0;
+    z-index: 2;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 878px) {
+  /* text size adjustments for screens */
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 11px;
+  }
+
+  nav ul li a {
+    font-size: 10px;
+  }
+
+  .btn {
+    font-size: 11px;
+    margin: 2vw 0vw;
+  }
+
+  /* Banner size */
+  #title-bg {
+    padding-bottom: 80px;
+    width: 65%;
+  }
 }

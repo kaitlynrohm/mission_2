@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles.css" rel="stylesheet" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <!-- Font awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
     <title>Capybara bananza</title>
   </head>
 
@@ -15,7 +20,7 @@
           <i
             class="fa-solid fa-bars"
             id="menu-icon"
-            style="color: #ffffff"
+            style="color: #36072a"
             onclick="togglemenu()"
           ></i>
           <nav>
@@ -32,6 +37,9 @@
     </header>
 
     <main>
+      <!-- Back to top button -->
+      <button onclick="topFunction()" id="to-top" title="Go to top">Top</button>
+
       <section id="title">
         <div id="banner">
           <h1>Adorable animals</h1>
@@ -43,6 +51,7 @@
           </div>
         </div>
       </section>
+      <section id="capybara"></section>
     </main>
 
     <footer></footer>
