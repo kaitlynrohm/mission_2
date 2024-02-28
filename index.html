@@ -37,6 +37,8 @@
     </header>
 
     <main>
+      <!-- Fixed position elements -->
+
       <!-- Back to top button -->
       <button onclick="topFunction()" id="to-top" title="Go to top">Top</button>
 
@@ -44,14 +46,76 @@
         <div id="banner">
           <h1>Adorable animals</h1>
           <div class="buttons">
-            <a href="#html-css" class="btn">Capybara</a>
-            <a href="#html-css" class="btn">Axolotl</a>
-            <a href="#html-css" class="btn">Fox</a>
-            <a href="#html-css" class="btn">Shark</a>
+            <a href="#capybara" class="btn">Capybara</a>
+            <a href="#axolotl" class="btn">Axolotl</a>
+            <a href="#fox" class="btn">Fox</a>
+            <a href="#shark" class="btn">Shark</a>
           </div>
         </div>
       </section>
-      <section id="capybara"></section>
+
+      <section id="capybara" class="grid">
+        <div class="grid-item" id="capybara-title">
+          <div class="flex">
+            <h2>Capybaras are adorable!</h2>
+            <h3>Here are some fun facts!!</h3>
+          </div>
+        </div>
+
+        <div class="grid-item" id="capybara-img">
+          <div class="flex">
+            <img src="img/capybara-section.jpg" />
+          </div>
+        </div>
+
+        <div class="grid-item" id="capybara-funfact1">
+          <h4>They are the worlds largest rodent!</h4>
+          <br />
+          <p>
+            These adorable animals are the largest rodent in the world. They are
+            nearly 60cm tall and weigh up to 68kg.
+          </p>
+          <br />
+        </div>
+
+        <div class="grid-item" id="capybara-funfact1">
+          <h4>Their teeth don't stop growing</h4>
+          <br />
+          <p>
+            They have to grind their teeth down by grinding and chewing on food
+            or bark.
+          </p>
+        </div>
+
+        <div class="grid-item" id="capybara-funfact1">
+          <h4>They have unique vocalisations</h4>
+          <br />
+          <p>
+            These sounds include teeth-chattering, squealing, whining,
+            whistling, crying, barking and clicking!
+          </p>
+        </div>
+
+        <div class="grid-item" id="capybara-funfact1">
+          <h4>They eat plants</h4>
+          <br />
+          <p>
+            Capybara's are herbivores that feed primarily on aquatic plants,
+            grasses, fruits and barks.
+          </p>
+        </div>
+        <p class="line">
+          <cite>8 Surprising Facts About Capybaras</cite> by
+          <a class="cite" href="https://www.treehugger.com/laura-moss-4844864"
+            >Laura Moss</a
+          >.
+          <a
+            class="cite"
+            href="https://www.treehugger.com/things-you-didnt-know-about-capybaras-4863785"
+            >Article Here.</a
+          >
+        </p>
+      </section>
     </main>
 
     <footer></footer>

@@ -16,7 +16,29 @@ header {
 }
 
 /* Styles for element types */
+h1 {
+  font-size: 2.8vw;
+}
 
+h2 {
+  font-size: 2.5vw;
+}
+
+h3 {
+  font-size: 2vw;
+}
+
+h4 {
+  font-size: 1.5vw;
+}
+
+p {
+  font-size: 1.3vw;
+}
+
+section {
+  padding: 4vw;
+}
 /* Common styles */
 .btn {
   text-decoration: none;
@@ -33,6 +55,22 @@ header {
 .btn:hover {
   background-color: #fc9776;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2vw;
+  grid-gap: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* Nav bar style */
 
 .container {
@@ -154,7 +192,23 @@ nav ul li a:hover {
 
 /* Capybara */
 #capybara {
-  height: 500px;
+  background-color: #f1e8b8;
+}
+
+#capybara-title {
+  grid-column: 1 / 3;
+}
+
+#capybara-title h2 {
+  padding: 4vw;
+}
+
+#capybara-img {
+  grid-column: 3/5;
+}
+
+.line {
+  grid-column: 1/5;
 }
 
 /* Responsive webpage styles */
