@@ -13,8 +13,8 @@
     <title>Cute animals</title>
   </head>
 
-  <body>
-    <header>
+  <body class="colour">
+    <header id="linear-gradient-colour">
       <div class="container">
         <div class="navbar">
           <i
@@ -40,21 +40,34 @@
       <!-- Fixed position elements -->
 
       <!-- Back to top button -->
-      <button onclick="topFunction()" id="to-top" title="Go to top">Top</button>
+      <button
+        onclick="topFunction()"
+        id="to-top"
+        title="Go to top"
+        class="colour background-colour"
+      >
+        Top
+      </button>
 
       <section id="title">
-        <div id="banner">
+        <div id="banner" class="background-colour">
           <h1>Adorable animals</h1>
           <div class="buttons">
-            <a href="#capybara" class="btn">Capybara</a>
-            <a href="#axolotl" class="btn">Axolotl</a>
-            <a href="#fox" class="btn">Fox</a>
-            <a href="#shark" class="btn">Shark</a>
+            <a href="#capybara" class="btn background-colour border-colour"
+              >Capybara</a
+            >
+            <a href="#axolotl" class="btn background-colour border-colour"
+              >Axolotl</a
+            >
+            <a href="#fox" class="btn background-colour border-colour">Fox</a>
+            <a href="#shark" class="btn background-colour border-colour"
+              >Shark</a
+            >
           </div>
         </div>
       </section>
 
-      <section id="capybara">
+      <section id="capybara" class="background-colour">
         <div class="grid">
           <div class="grid-item title">
             <div class="flex">
@@ -117,10 +130,12 @@
             >Article Here.</a
           >
         </p>
-        <button id="dark-change">Dark mode</button>
+        <button id="dark-change" class="background-colour border-colour">
+          Dark mode
+        </button>
       </section>
 
-      <section id="axolotl">
+      <section id="axolotl" class="background-colour">
         <div class="grid">
           <div class="grid-item title">
             <div class="flex">
@@ -187,10 +202,12 @@
             >Article Here.</a
           >
         </p>
-        <button id="invert-change">Invert colours</button>
+        <button id="invert-change" class="background-colour border-colour">
+          Invert colours
+        </button>
       </section>
 
-      <section id="fox">
+      <section id="fox" class="background-colour">
         <div class="grid">
           <div class="grid-item title">
             <div class="flex">
@@ -251,10 +268,12 @@
             >Article Here.</a
           >
         </p>
-        <button id="red-green-change">Red-green colourblind mode</button>
+        <button id="red-green-change" class="background-colour border-colour">
+          Red-green colourblind mode
+        </button>
       </section>
 
-      <section id="shark">
+      <section id="shark" class="background-colour">
         <div class="grid">
           <div class="grid-item title">
             <div class="flex">
@@ -316,7 +335,9 @@
             >Article Here.</a
           >
         </p>
-        <button id="bright-change">Bright mode</button>
+        <button id="bright-change" class="background-colour border-colour">
+          Bright mode
+        </button>
       </section>
     </main>
 

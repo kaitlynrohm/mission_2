@@ -11,7 +11,6 @@ html {
 
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background: #b6ffc2;
   color: #36072a;
 }
 
@@ -51,7 +50,7 @@ button {
   width: 25%;
   border: 2px solid #36072a;
   background-color: #f8b6a0;
-  color: #36072a;
+  color: inherit;
   margin: 2vw;
   padding: 0.5vw;
 }
@@ -62,14 +61,14 @@ button:hover {
 
 /* Common styles */
 .cite {
-  color: #36072a;
+  color: inherit;
 }
 
 .btn {
   text-decoration: none;
   border: 2px solid #f8b6a0;
   background-color: #f8b6a0;
-  color: #36072a;
+  color: inherit;
   min-width: 10vw;
   margin: 2vw 0.3vw;
   padding: 2px;
@@ -149,7 +148,7 @@ nav ul li {
 
 nav > ul > li > a {
   text-decoration: none;
-  color: #36072a;
+  color: inherit;
   font-size: 1.1vw;
 }
 
