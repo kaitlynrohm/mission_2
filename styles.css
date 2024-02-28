@@ -165,6 +165,7 @@ nav ul li a:hover {
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 5px 10px; /* Some padding */
   border-radius: 10px;
+  width: 4vw;
 }
 
 /* Title section styles */
@@ -241,6 +242,11 @@ nav ul li a:hover {
 /* Fox section */
 #fox {
   background-color: #a5ccf3;
+}
+
+/* Shark section */
+#shark {
+  background-color: #f8b6a0;
 }
 
 /* Responsive webpage styles */
