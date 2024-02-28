@@ -41,14 +41,10 @@ section {
   text-align: center;
 }
 
-a {
-  color: #36072a;
-}
-
 button {
   font-family: inherit;
   font-size: 1.3vw;
-  width: 10vw;
+  width: 25%;
   border: 2px solid #36072a;
   background-color: #f8b6a0;
   color: #36072a;
@@ -61,6 +57,10 @@ button:hover {
 }
 
 /* Common styles */
+.cite {
+  color: #36072a;
+}
+
 .btn {
   text-decoration: none;
   border: 2px solid #f8b6a0;
@@ -235,7 +235,12 @@ nav ul li a:hover {
 
 /* Axolotl section */
 #axolotl {
-  background-color: #f8b6a0;
+  background-color: #ffc2cc;
+}
+
+/* Fox section */
+#fox {
+  background-color: #a5ccf3;
 }
 
 /* Responsive webpage styles */
