@@ -14,22 +14,22 @@
   </head>
 
   <body class="colour">
-    <header id="linear-gradient-colour">
+    <header class="linear-background">
       <div class="container">
         <div class="navbar">
           <i
-            class="fa-solid fa-bars"
+            class="fa-solid fa-bars colour"
             id="menu-icon"
             style="color: #36072a"
             onclick="togglemenu()"
           ></i>
           <nav>
-            <ul id="menuList">
-              <li><a href="#">Home</a></li>
-              <li><a href="#capybara">Capybara</a></li>
-              <li><a href="#axolotl">Axolotl</a></li>
-              <li><a href="#foxes">Foxes</a></li>
-              <li><a href="#sharks">Sharks</a></li>
+            <ul id="menuList" class="linear-background">
+              <li><a href="#" class="hover-colour">Home</a></li>
+              <li><a href="#capybara" class="hover-colour">Capybara</a></li>
+              <li><a href="#axolotl" class="hover-colour">Axolotl</a></li>
+              <li><a href="#foxes" class="hover-colour">Foxes</a></li>
+              <li><a href="#sharks" class="hover-colour">Sharks</a></li>
             </ul>
           </nav>
         </div>
@@ -44,7 +44,7 @@
         onclick="topFunction()"
         id="to-top"
         title="Go to top"
-        class="colour background-colour"
+        class="colour background-colour hover-background-colour"
       >
         Top
       </button>
@@ -53,14 +53,24 @@
         <div id="banner" class="background-colour">
           <h1>Adorable animals</h1>
           <div class="buttons">
-            <a href="#capybara" class="btn background-colour border-colour"
+            <a
+              href="#capybara"
+              class="btn background-colour border-colour hover-background-colour"
               >Capybara</a
             >
-            <a href="#axolotl" class="btn background-colour border-colour"
+            <a
+              href="#axolotl"
+              class="btn background-colour border-colour hover-background-colour"
               >Axolotl</a
             >
-            <a href="#fox" class="btn background-colour border-colour">Fox</a>
-            <a href="#shark" class="btn background-colour border-colour"
+            <a
+              href="#fox"
+              class="btn background-colour border-colour hover-background-colour"
+              >Fox</a
+            >
+            <a
+              href="#shark"
+              class="btn background-colour border-colour hover-background-colour"
               >Shark</a
             >
           </div>
@@ -130,7 +140,11 @@
             >Article Here.</a
           >
         </p>
-        <button id="dark-change" class="background-colour border-colour">
+        <button
+          id="dark-change"
+          class="background-colour border-colour hover-background-colour"
+          onclick="darkMode()"
+        >
           Dark mode
         </button>
       </section>
@@ -202,7 +216,10 @@
             >Article Here.</a
           >
         </p>
-        <button id="invert-change" class="background-colour border-colour">
+        <button
+          id="invert-change"
+          class="background-colour border-colour hover-background-colour"
+        >
           Invert colours
         </button>
       </section>
@@ -268,7 +285,10 @@
             >Article Here.</a
           >
         </p>
-        <button id="red-green-change" class="background-colour border-colour">
+        <button
+          id="red-green-change"
+          class="background-colour border-colour hover-background-colour"
+        >
           Red-green colourblind mode
         </button>
       </section>
@@ -335,7 +355,10 @@
             >Article Here.</a
           >
         </p>
-        <button id="bright-change" class="background-colour border-colour">
+        <button
+          id="bright-change"
+          class="background-colour border-colour hover-background-colour"
+        >
           Bright mode
         </button>
       </section>

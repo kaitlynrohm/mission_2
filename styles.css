@@ -42,6 +42,7 @@ p {
 section {
   padding: 4vw;
   text-align: center;
+  color: inherit;
 }
 
 button {
@@ -53,6 +54,7 @@ button {
   color: inherit;
   margin: 2vw;
   padding: 0.5vw;
+  cursor: pointer;
 }
 
 button:hover {
@@ -74,6 +76,7 @@ button:hover {
   padding: 2px;
   font-size: 1.3vw;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -85,6 +88,7 @@ button:hover {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 2vw;
   grid-gap: 10px;
+  color: inherit;
 }
 
 .flex {
@@ -93,6 +97,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  color: inherit;
 }
 
 /* styling within sections */
@@ -150,6 +155,7 @@ nav > ul > li > a {
   text-decoration: none;
   color: inherit;
   font-size: 1.1vw;
+  cursor: pointer;
 }
 
 nav ul li a:hover {
@@ -166,9 +172,14 @@ nav ul li a:hover {
   background-color: #36072a; /* Set a background color */
   color: #ffc2cc;
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 5px 10px; /* Some padding */
+  padding: 5px 0px; /* Some padding */
   border-radius: 10px;
   width: 4vw;
+  text-align: center;
+}
+
+#to-top:hover {
+  background-color: #86156a;
 }
 
 /* Title section styles */
