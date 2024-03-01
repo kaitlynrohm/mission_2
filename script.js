@@ -60,7 +60,9 @@ for (let i = 0; i < hasBorderColour.length; i++) {
 let elementlinearBackground = []; //Will have the border style of the elements in same order as hasBorder has elements
 
 for (let i = 0; i < linearBackground.length; i++) {
-  elementBorders.push(getComputedStyle(linearBackground[i]).background);
+  elementlinearBackground.push(
+    getComputedStyle(linearBackground[i]).background
+  );
 }
 
 //Functions
@@ -92,44 +94,72 @@ function topFunction() {
 }
 
 //Functions for changing colour schemes - variables at top of file
-//================= Dark mode =================
-function darkMode() {
-  mode = "dark";
-  //Switches colours so that main background is black with coloured accents
+//================= Normal mode =================
+function normalMode() {
   for (let i = 0; i < hasColour.length; i++) {
-    //Change text colour
-    switch (elementColours[i]) {
-      case "rgb(54, 7, 42)": //Body text colour
-        hasColour[i].style.color = "#ffc2cc"; //Pink colour
-        break;
-
-      case "rgb(255, 194, 204)": //Top button text-colour
-        hasColour[i].style.color = "black"; //The button background will be a light-ish colour
-        break;
-
-      default:
-        console.log("Something went wrong - did you miss a colour?");
-    }
+    hasColour[i].style.color = elementColours[i];
   }
 
   for (let i = 0; i < hasBackgroundColour.length; i++) {
-    //Change baclground colour
-    switch (elementBackgroundColours[i]) {
-      case "rgb(54, 7, 42)": //Top background colour
-        hasBackgroundColour[i].style.backgroundColor = "#ffc2cc"; //Pink colour
-        break;
-
-      default:
-        hasBackgroundColour[i].style.backgroundColor = "black"; //Makes backgrounds black
-    }
+    hasBackgroundColour[i].style.backgroundColor = elementBackgroundColours[i];
   }
 
   for (let i = 0; i < hasBorderColour.length; i++) {
-    hasBorderColour[i].style.border = "2px solid #f8b6a0";
+    hasBorderColour[i].style.border = elementBorders[i];
   }
 
   for (let i = 0; i < linearBackground.length; i++) {
-    linearBackground[i].style.background = "black";
+    linearBackground[i].style.background = elementlinearBackground[i];
+  }
+}
+
+//================= Dark mode =================
+function darkMode() {
+  switch (mode) {
+    case "dark":
+      mode = "normal";
+      normalMode();
+      break;
+
+    default:
+      mode = "dark";
+      //Switches colours so that main background is black with coloured accents
+      for (let i = 0; i < hasColour.length; i++) {
+        //Change text colour
+        switch (elementColours[i]) {
+          case "rgb(54, 7, 42)": //Body text colour
+            hasColour[i].style.color = "#ffc2cc"; //Pink colour
+            break;
+
+          case "rgb(255, 194, 204)": //Top button text-colour
+            hasColour[i].style.color = "black"; //The button background will be a light-ish colour
+            break;
+
+          default:
+            console.log("Something went wrong - did you miss a colour?");
+        }
+      }
+
+      for (let i = 0; i < hasBackgroundColour.length; i++) {
+        //Change baclground colour
+        switch (elementBackgroundColours[i]) {
+          case "rgb(54, 7, 42)": //Top background colour
+            hasBackgroundColour[i].style.backgroundColor = "#ffc2cc"; //Pink colour
+            break;
+
+          default:
+            hasBackgroundColour[i].style.backgroundColor = "black"; //Makes backgrounds black
+        }
+      }
+
+      for (let i = 0; i < hasBorderColour.length; i++) {
+        hasBorderColour[i].style.border = "2px solid #f8b6a0";
+      }
+
+      for (let i = 0; i < linearBackground.length; i++) {
+        linearBackground[i].style.background = "black";
+      }
+      break;
   }
 }
 
