@@ -92,6 +92,7 @@ function topFunction() {
 }
 
 //Functions for changing colour schemes - variables at top of file
+//================= Dark mode =================
 function darkMode() {
   mode = "dark";
   //Switches colours so that main background is black with coloured accents
@@ -122,10 +123,17 @@ function darkMode() {
         hasBackgroundColour[i].style.backgroundColor = "black"; //Makes backgrounds black
     }
   }
+
+  for (let i = 0; i < hasBorderColour.length; i++) {
+    hasBorderColour[i].style.border = "2px solid #f8b6a0";
+  }
+
   for (let i = 0; i < linearBackground.length; i++) {
     linearBackground[i].style.background = "black";
   }
 }
+
+//================= Hover functions =================
 
 //function for hover (buttons and links)
 function modeHover(event) {
@@ -137,8 +145,8 @@ function modeHover(event) {
         event.target.style.color = "#fc9776";
       } else if (event.target.classList.contains("hover-background-colour")) {
         //What colour is the background changing to.
-        switch (event.target.style.color) {
-          case "rgb(54, 7, 42)":
+        switch (event.target.style.backgroundColor) {
+          case "rgb(255, 194, 204)":
             event.target.style.backgroundColor = "#ff8c9f";
             break;
 
@@ -161,8 +169,8 @@ function modeUnhover(event) {
         event.target.style.color = "#ffc2cc";
       } else if (event.target.classList.contains("hover-background-colour")) {
         //What colour is the background changing to.
-        switch (event.target.style.color) {
-          case "rgb(54, 7, 42)":
+        switch (event.target.style.backgroundColor) {
+          case "rgb(255, 140, 159)":
             event.target.style.backgroundColor = "#ffc2cc";
             break;
 
