@@ -188,7 +188,7 @@ function invertMode() {
             break;
 
           case "rgb(255, 194, 204)": //Top button text-colour
-            hasColour[i].style.color = "003d33";
+            hasColour[i].style.color = "#003d33";
             break;
 
           default:
@@ -208,7 +208,7 @@ function invertMode() {
             break;
 
           case "rgb(248, 182, 160)":
-            hasBackgroundColour[i].style.backgroundColor = "#f8b6a0";
+            hasBackgroundColour[i].style.backgroundColor = "#07495f";
             break;
 
           case "rgb(241, 232, 184)":
@@ -225,13 +225,13 @@ function invertMode() {
       }
 
       for (let i = 0; i < hasBorderColour.length; i++) {
-        switch (elementBackgroundColours[i]) {
+        switch (elementBorders[i]) {
           case "2px solid rgb(248, 182, 160)":
-            hasBackgroundColour[i].style.border = "#07495f";
+            hasBorderColour[i].style.border = "2px solid #07495f";
             break;
 
           case "2px solid rgb(54, 7, 42)":
-            hasBackgroundColour[i].style.border = "#c9f8d5";
+            hasBorderColour[i].style.border = "2px solid #c9f8d5";
             break;
 
           default:
@@ -289,6 +289,25 @@ function modeHover(event) {
         }
       }
       break;
+
+    case "invert":
+      // Check for class
+      if (event.target.classList.contains("hover-colour")) {
+        //If the style being changed is colour
+        event.target.style.color = "#00b899";
+      } else if (event.target.classList.contains("hover-background-colour")) {
+        //What colour is the background changing to.
+        switch (event.target.style.backgroundColor) {
+          case "rgb(7, 73, 95)":
+            event.target.style.backgroundColor = "#0e1747";
+            break;
+
+          case "rgb(201, 248, 213)":
+            event.target.style.backgroundColor = "#79ea95";
+            break;
+        }
+      }
+      break;
   }
 }
 
@@ -328,6 +347,25 @@ function modeUnhover(event) {
 
           default:
             event.target.style.backgroundColor = "black";
+            break;
+        }
+      }
+      break;
+
+    case "invert":
+      // Check for class
+      if (event.target.classList.contains("hover-colour")) {
+        //If the style being changed is colour
+        event.target.style.color = "#c9f8d5";
+      } else if (event.target.classList.contains("hover-background-colour")) {
+        //What colour is the background changing to.
+        switch (event.target.style.backgroundColor) {
+          case "rgb(14, 23, 71)":
+            event.target.style.backgroundColor = "#07495f";
+            break;
+
+          case "rgb(121, 234, 149)":
+            event.target.style.backgroundColor = "#c9f8d5";
             break;
         }
       }
