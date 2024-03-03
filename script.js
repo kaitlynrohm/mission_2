@@ -247,6 +247,84 @@ function invertMode() {
   }
 }
 
+//================= Bright mode =================
+function brightMode() {
+  switch (mode) {
+    case "bright":
+      mode = "normal";
+      normalMode();
+      break;
+
+    default:
+      mode = "bright";
+      //Switches colours so that main background is black with coloured accents
+      for (let i = 0; i < hasColour.length; i++) {
+        //Change text colour
+        switch (elementColours[i]) {
+          case "rgb(54, 7, 42)": //Body text colour
+            hasColour[i].style.color = "#323031";
+            break;
+
+          case "rgb(255, 194, 204)": //Top button text-colour
+            hasColour[i].style.color = "#ff5964";
+            break;
+
+          default:
+            console.log("Something went wrong - did you miss a colour?");
+        }
+      }
+
+      for (let i = 0; i < hasBackgroundColour.length; i++) {
+        //Change baclground colour
+        switch (elementBackgroundColours[i]) {
+          case "rgb(54, 7, 42)": //Top background colour
+            hasBackgroundColour[i].style.backgroundColor = "#323031";
+            break;
+
+          case "rgb(165, 204, 243)": //Blue colour
+            hasBackgroundColour[i].style.backgroundColor = "#5da9e9";
+            break;
+
+          case "rgb(248, 182, 160)": //Peach colour
+            hasBackgroundColour[i].style.backgroundColor = "#379634";
+            break;
+
+          case "rgb(241, 232, 184)": //Yellow colour
+            hasBackgroundColour[i].style.backgroundColor = "#fde74c";
+            break;
+
+          case "rgb(255, 194, 204)": //Pink colour
+            hasBackgroundColour[i].style.backgroundColor = "#ff5964";
+            break;
+
+          default:
+            console.log("Something went wrong!");
+        }
+      }
+
+      for (let i = 0; i < hasBorderColour.length; i++) {
+        switch (elementBorders[i]) {
+          case "2px solid rgb(248, 182, 160)": //Mode change buttons - peach
+            hasBorderColour[i].style.border = "2px solid #379634";
+            break;
+
+          case "2px solid rgb(54, 7, 42)": //Top button - dark colour
+            hasBorderColour[i].style.border = "2px solid #323031";
+            break;
+
+          default:
+            console.log("Something went wrong!");
+        }
+      }
+
+      for (let i = 0; i < linearBackground.length; i++) {
+        linearBackground[i].style.background =
+          "rgba(0, 0, 0, 0) linear-gradient(#fde74c, #ff5964, #5da9e9, #379634) repeat scroll 0% 0% / auto padding-box border-box";
+      }
+      break;
+  }
+}
+
 //================= Cool colour mode =================
 function coolColourMode() {
   switch (mode) {
@@ -387,6 +465,25 @@ function modeHover(event) {
       }
       break;
 
+    case "bright":
+      // Check for class
+      if (event.target.classList.contains("hover-colour")) {
+        //If the style being changed is colour - nav bar
+        event.target.style.color = "#339431";
+      } else if (event.target.classList.contains("hover-background-colour")) {
+        //What colour is the background changing to.
+        switch (event.target.style.backgroundColor) {
+          case "rgb(55, 150, 52)": //mode buttons
+            event.target.style.backgroundColor = "#fde74c";
+            break;
+
+          case "rgb(50, 48, 49)": //Top button
+            event.target.style.backgroundColor = "#4a152f";
+            break;
+        }
+      }
+      break;
+
     case "coolColour":
       // Check for class
       if (event.target.classList.contains("hover-colour")) {
@@ -463,6 +560,25 @@ function modeUnhover(event) {
 
           case "rgb(121, 234, 149)":
             event.target.style.backgroundColor = "#c9f8d5";
+            break;
+        }
+      }
+      break;
+
+    case "bright":
+      // Check for class
+      if (event.target.classList.contains("hover-colour")) {
+        //If the style being changed is colour - nav bar
+        event.target.style.color = "#323031";
+      } else if (event.target.classList.contains("hover-background-colour")) {
+        //What colour is the background changing to.
+        switch (event.target.style.backgroundColor) {
+          case "rgb(253, 231, 76)": //mode buttons
+            event.target.style.backgroundColor = "#379634";
+            break;
+
+          case "rgb(74, 21, 47)": //Top button
+            event.target.style.backgroundColor = "#323031";
             break;
         }
       }
