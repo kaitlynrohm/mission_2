@@ -66,12 +66,12 @@ button:hover {
   color: inherit;
 }
 
-.btn {
+.btn,
+btn-img {
   text-decoration: none;
   border: 2px solid #f8b6a0;
   background-color: #f8b6a0;
   color: inherit;
-  min-width: 10vw;
   margin: 2vw 0.3vw;
   padding: 2px;
   font-size: 1.3vw;
@@ -79,7 +79,12 @@ button:hover {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn {
+  min-width: 10vw;
+}
+
+.btn:hover,
+.btn-img:hover {
   background-color: #f1e8b8;
 }
 
@@ -93,7 +98,6 @@ button:hover {
 
 .flex {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -115,6 +119,12 @@ button:hover {
 
 .img img {
   height: 20vw;
+}
+
+.left-img,
+.right-img {
+  width: fit-content;
+  height: 10vw;
 }
 
 /* Nav bar style */

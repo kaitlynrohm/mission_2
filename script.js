@@ -65,11 +65,15 @@ for (let i = 0; i < linearBackground.length; i++) {
   );
 }
 
-//console log the colours
-console.log("colours", elementColours);
-console.log("bg", elementBackgroundColours);
-console.log("border", elementBorders);
-console.log("lbg", elementlinearBackground);
+//Image carousel variables
+const capybaraCarousel = document.querySelector("#capybara-img");
+const axolotlCarousel = document.querySelector("#axolotl-img");
+const foxCarousel = document.querySelector("#fox-img");
+const sharkCarousel = document.querySelector("#shark-img");
+const capybaraImg = [];
+const axolotlImg = [];
+const foxImg = [];
+const sharkImg = [];
 
 //Functions
 function togglemenu() {
@@ -98,6 +102,13 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+//Switch through images with button click
+//================= Left =================
+function leftImage(section) {}
+
+//================= right =================
+function rightImage(section) {}
 
 //Functions for changing colour schemes - variables at top of file
 //================= Normal mode =================
@@ -516,7 +527,7 @@ function modeUnhover(event) {
       } else if (event.target.classList.contains("hover-background-colour")) {
         //What colour is the background changing to.
         switch (event.target.style.backgroundColor) {
-          case "rgb(121, 234, 149)":
+          case "rgb(241, 232, 184)":
             event.target.style.backgroundColor = "#f8b6a0";
             break;
 
