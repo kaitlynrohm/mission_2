@@ -250,7 +250,7 @@ function invertMode() {
 //================= Cool colour mode =================
 function coolColourMode() {
   switch (mode) {
-    case "bright":
+    case "coolColour":
       mode = "normal";
       normalMode();
       break;
