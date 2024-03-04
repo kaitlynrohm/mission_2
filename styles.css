@@ -98,7 +98,7 @@ btn-img {
 
 .flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   color: inherit;
@@ -119,6 +119,10 @@ btn-img {
 
 .img img {
   height: 20vw;
+}
+
+.image-carousel {
+  max-width: 30vw;
 }
 
 .left-img,

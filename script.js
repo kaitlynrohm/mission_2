@@ -70,10 +70,37 @@ const capybaraCarousel = document.querySelector("#capybara-img");
 const axolotlCarousel = document.querySelector("#axolotl-img");
 const foxCarousel = document.querySelector("#fox-img");
 const sharkCarousel = document.querySelector("#shark-img");
-const capybaraImg = [];
-const axolotlImg = [];
-const foxImg = [];
-const sharkImg = [];
+const capybaraImg = [
+  "img/capybara/capybara-section.jpg",
+  "img/capybara/capybara-section2.jpg",
+  "img/capybara/capybara-section3.jpg",
+  "img/capybara/capybara-section4.jpg",
+];
+let capybaraIndex = 0;
+
+const axolotlImg = [
+  "img/axolotl/axolotl-section.jpg",
+  "img/axolotl/axolotl-section2.jpg",
+  "img/axolotl/axolotl-section3.jpg",
+  "img/axolotl/axolotl-section4.jpg",
+];
+let axolotlIndex = 0;
+
+const foxImg = [
+  "img/fox/fox-section.jpg",
+  "img/fox/fox-section2.jpg",
+  "img/fox/fox-section3.jpg",
+  "img/fox/fox-section4.jpg",
+];
+let foxIndex = 0;
+
+const sharkImg = [
+  "img/shark/shark-section.jpg",
+  "img/shark/shark-section2.jpg",
+  "img/shark/shark-section3.jpg",
+  "img/shark/shark-section4.jpg",
+];
+let sharkIndex = 0;
 
 //Functions
 function togglemenu() {
@@ -105,10 +132,86 @@ function topFunction() {
 
 //Switch through images with button click
 //================= Left =================
-function leftImage(section) {}
+function leftImage(section) {
+  switch (section) {
+    case "capybara":
+      //Makes sure correct image is displayed
+      capybaraIndex === 0
+        ? (capybaraIndex = capybaraImg.length - 1)
+        : capybaraIndex--;
+
+      //changing image displayed
+      capybaraCarousel.src = capybaraImg[capybaraIndex];
+      break;
+
+    case "axolotl":
+      //Makes sure correct image is displayed
+      axolotlIndex === 0
+        ? (axolotlIndex = axolotlImg.length - 1)
+        : axolotlIndex--;
+
+      //changing image displayed
+      axolotlCarousel.src = axolotlImg[axolotlIndex];
+      break;
+
+    case "fox":
+      //Makes sure correct image is displayed
+      foxIndex === 0 ? (foxIndex = foxImg.length - 1) : foxIndex--;
+
+      //changing image displayed
+      foxCarousel.src = foxImg[foxIndex];
+      break;
+
+    case "shark":
+      //Makes sure correct image is displayed
+      sharkIndex === 0 ? (sharkIndex = sharkImg.length - 1) : sharkIndex--;
+
+      //changing image displayed
+      sharkCarousel.src = sharkImg[sharkIndex];
+      break;
+  }
+}
 
 //================= right =================
-function rightImage(section) {}
+function rightImage(section) {
+  switch (section) {
+    case "capybara":
+      //Makes sure correct image is displayed
+      capybaraIndex === capybaraImg.length - 1
+        ? (capybaraIndex = 0)
+        : capybaraIndex++;
+
+      //changing image displayed
+      capybaraCarousel.src = capybaraImg[capybaraIndex];
+      break;
+
+    case "axolotl":
+      //Makes sure correct image is displayed
+      axolotlIndex === axolotlImg.length - 1
+        ? (axolotlIndex = 0)
+        : axolotlIndex++;
+
+      //changing image displayed
+      axolotlCarousel.src = axolotlImg[axolotlIndex];
+      break;
+
+    case "fox":
+      //Makes sure correct image is displayed
+      foxIndex === foxImg.length - 1 ? (foxIndex = 0) : foxIndex++;
+
+      //changing image displayed
+      foxCarousel.src = foxImg[foxIndex];
+      break;
+
+    case "shark":
+      //Makes sure correct image is displayed
+      sharkIndex === sharkImg.length - 1 ? (sharkIndex = 0) : sharkIndex++;
+
+      //changing image displayed
+      sharkCarousel.src = sharkImg[sharkIndex];
+      break;
+  }
+}
 
 //Functions for changing colour schemes - variables at top of file
 //================= Normal mode =================
