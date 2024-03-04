@@ -270,6 +270,7 @@ function rightImage(section) {
 //================= Normal mode =================
 function normalMode() {
   //Images
+  title.style.background = 'url("img/capybara.jpg") center left';
   capybaraCarousel.src = capybaraImgAll[0][capybaraIndex];
   axolotlCarousel.src = axolotlImgAll[0][axolotlIndex];
   foxCarousel.src = foxImgAll[0][foxIndex];
