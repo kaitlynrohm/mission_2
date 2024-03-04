@@ -31,6 +31,7 @@ for (let i = 0; i < hoverBackgroundColour.length; i++) {
 }
 
 //Variables for colour scheme changes - working
+const title = document.querySelector("#title");
 const hasColour = document.querySelectorAll(".colour"); //All elements that have a colour atribute (text)
 const hasBackgroundColour = document.querySelectorAll(".background-colour"); //All elements with background colour
 const hasBorderColour = document.querySelectorAll(".border-colour"); //All elements with a border colour
@@ -76,6 +77,14 @@ const capybaraImg = [
   "img/capybara/capybara-section3.jpg",
   "img/capybara/capybara-section4.jpg",
 ];
+const capybaraInverted = [
+  "img/invert-img/capybara/capybara-invert1.jpg",
+  "img/invert-img/capybara/capybara-invert2.jpg",
+  "img/invert-img/capybara/capybara-invert3.jpg",
+  "img/invert-img/capybara/capybara-invert4.jpg",
+];
+//to lessen amount of code - index 0 is normal, index 1 is inverted
+const capybaraImgAll = [capybaraImg, capybaraInverted];
 let capybaraIndex = 0;
 
 const axolotlImg = [
@@ -84,6 +93,14 @@ const axolotlImg = [
   "img/axolotl/axolotl-section3.jpg",
   "img/axolotl/axolotl-section4.jpg",
 ];
+const axolotlInverted = [
+  "img/invert-img/axolotl/axolotl-invert1.jpg",
+  "img/invert-img/axolotl/axolotl-invert2.jpg",
+  "img/invert-img/axolotl/axolotl-invert3.jpg",
+  "img/invert-img/axolotl/axolotl-invert4.jpg",
+];
+//to lessen amount of code - index 0 is normal, index 1 is inverted
+const axolotlImgAll = [axolotlImg, axolotlInverted];
 let axolotlIndex = 0;
 
 const foxImg = [
@@ -92,6 +109,14 @@ const foxImg = [
   "img/fox/fox-section3.jpg",
   "img/fox/fox-section4.jpg",
 ];
+const foxInverted = [
+  "img/invert-img/fox/fox-invert1.jpg",
+  "img/invert-img/fox/fox-invert2.jpg",
+  "img/invert-img/fox/fox-invert3.jpg",
+  "img/invert-img/fox/fox-invert4.jpg",
+];
+//to lessen amount of code - index 0 is normal, index 1 is inverted
+const foxImgAll = [foxImg, foxInverted];
 let foxIndex = 0;
 
 const sharkImg = [
@@ -100,6 +125,14 @@ const sharkImg = [
   "img/shark/shark-section3.jpg",
   "img/shark/shark-section4.jpg",
 ];
+const sharkInverted = [
+  "img/invert-img/shark/shark-invert1.jpg",
+  "img/invert-img/shark/shark-invert2.jpg",
+  "img/invert-img/shark/shark-invert3.jpg",
+  "img/invert-img/shark/shark-invert4.jpg",
+];
+//to lessen amount of code - index 0 is normal, index 1 is inverted
+const sharkImgAll = [sharkImg, sharkInverted];
 let sharkIndex = 0;
 
 //Functions
@@ -133,6 +166,16 @@ function topFunction() {
 //Switch through images with button click
 //================= Left =================
 function leftImage(section) {
+  let imgIndex;
+  switch (mode) {
+    case "invert":
+      imgIndex = 1;
+      break;
+
+    default:
+      imgIndex = 0;
+      break;
+  }
   switch (section) {
     case "capybara":
       //Makes sure correct image is displayed
@@ -141,7 +184,7 @@ function leftImage(section) {
         : capybaraIndex--;
 
       //changing image displayed
-      capybaraCarousel.src = capybaraImg[capybaraIndex];
+      capybaraCarousel.src = capybaraImgAll[imgIndex][capybaraIndex];
       break;
 
     case "axolotl":
@@ -151,7 +194,7 @@ function leftImage(section) {
         : axolotlIndex--;
 
       //changing image displayed
-      axolotlCarousel.src = axolotlImg[axolotlIndex];
+      axolotlCarousel.src = axolotlImgAll[imgIndex][axolotlIndex];
       break;
 
     case "fox":
@@ -159,7 +202,7 @@ function leftImage(section) {
       foxIndex === 0 ? (foxIndex = foxImg.length - 1) : foxIndex--;
 
       //changing image displayed
-      foxCarousel.src = foxImg[foxIndex];
+      foxCarousel.src = foxImgAll[imgIndex][foxIndex];
       break;
 
     case "shark":
@@ -167,13 +210,23 @@ function leftImage(section) {
       sharkIndex === 0 ? (sharkIndex = sharkImg.length - 1) : sharkIndex--;
 
       //changing image displayed
-      sharkCarousel.src = sharkImg[sharkIndex];
+      sharkCarousel.src = sharkImgAll[imgIndex][sharkIndex];
       break;
   }
 }
 
 //================= right =================
 function rightImage(section) {
+  switch (mode) {
+    case "invert":
+      imgIndex = 1;
+      break;
+
+    default:
+      imgIndex = 0;
+      break;
+  }
+
   switch (section) {
     case "capybara":
       //Makes sure correct image is displayed
@@ -182,7 +235,7 @@ function rightImage(section) {
         : capybaraIndex++;
 
       //changing image displayed
-      capybaraCarousel.src = capybaraImg[capybaraIndex];
+      capybaraCarousel.src = capybaraImgAll[imgIndex][capybaraIndex];
       break;
 
     case "axolotl":
@@ -192,7 +245,7 @@ function rightImage(section) {
         : axolotlIndex++;
 
       //changing image displayed
-      axolotlCarousel.src = axolotlImg[axolotlIndex];
+      axolotlCarousel.src = axolotlImgAll[imgIndex][axolotlIndex];
       break;
 
     case "fox":
@@ -200,7 +253,7 @@ function rightImage(section) {
       foxIndex === foxImg.length - 1 ? (foxIndex = 0) : foxIndex++;
 
       //changing image displayed
-      foxCarousel.src = foxImg[foxIndex];
+      foxCarousel.src = foxImgAll[imgIndex][foxIndex];
       break;
 
     case "shark":
@@ -208,7 +261,7 @@ function rightImage(section) {
       sharkIndex === sharkImg.length - 1 ? (sharkIndex = 0) : sharkIndex++;
 
       //changing image displayed
-      sharkCarousel.src = sharkImg[sharkIndex];
+      sharkCarousel.src = sharkImgAll[imgIndex][sharkIndex];
       break;
   }
 }
@@ -216,6 +269,12 @@ function rightImage(section) {
 //Functions for changing colour schemes - variables at top of file
 //================= Normal mode =================
 function normalMode() {
+  //Images
+  capybaraCarousel.src = capybaraImgAll[0][capybaraIndex];
+  axolotlCarousel.src = axolotlImgAll[0][axolotlIndex];
+  foxCarousel.src = foxImgAll[0][foxIndex];
+  sharkCarousel.src = sharkImgAll[0][sharkIndex];
+
   for (let i = 0; i < hasColour.length; i++) {
     hasColour[i].style.color = elementColours[i];
   }
@@ -293,7 +352,16 @@ function invertMode() {
 
     default:
       mode = "invert";
-      //Switches colours so that main background is black with coloured accents
+      //Inverts all colours
+
+      //Images
+      title.style.background =
+        'url("img/invert-img/capybara-inverted.jpg") center left';
+      capybaraCarousel.src = capybaraImgAll[1][capybaraIndex];
+      axolotlCarousel.src = axolotlImgAll[1][axolotlIndex];
+      foxCarousel.src = foxImgAll[1][foxIndex];
+      sharkCarousel.src = sharkImgAll[1][sharkIndex];
+
       for (let i = 0; i < hasColour.length; i++) {
         //Change text colour
         switch (elementColours[i]) {
