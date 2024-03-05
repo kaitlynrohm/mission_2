@@ -98,7 +98,7 @@ btn-img {
 
 .flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   color: inherit;
@@ -115,6 +115,11 @@ btn-img {
 
 .img {
   grid-column: 3/5;
+}
+
+.img > .flex {
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .img img {
