@@ -31,7 +31,8 @@ for (let i = 0; i < hoverBackgroundColour.length; i++) {
 }
 
 //Variables for colour scheme changes - working
-const title = document.querySelector("#title");
+const title = document.querySelector("#title"); //for title background
+const modeName = document.querySelectorAll(".mode-name"); //To change the button text
 const hasColour = document.querySelectorAll(".colour"); //All elements that have a colour atribute (text)
 const hasBackgroundColour = document.querySelectorAll(".background-colour"); //All elements with background colour
 const hasBorderColour = document.querySelectorAll(".border-colour"); //All elements with a border colour
@@ -266,15 +267,49 @@ function rightImage(section) {
   }
 }
 
-//Functions for changing colour schemes - variables at top of file
-//================= Normal mode =================
-function normalMode() {
-  //Images
+//================= Change button text =================
+const capybaraText = "Dark";
+const axolotlText = "Invert";
+const foxText = "Bright";
+const sharkText = "Cool colour";
+function buttonTextChange(section, name) {
+  modeName[0].innerHTML = capybaraText;
+  modeName[1].innerHTML = axolotlText;
+  modeName[2].innerHTML = foxText;
+  modeName[3].innerHTML = sharkText;
+  switch (section) {
+    case "capybara":
+      modeName[0].innerHTML = name;
+      break;
+
+    case "axolotl":
+      modeName[1].innerHTML = name;
+      break;
+
+    case "fox":
+      modeName[2].innerHTML = name;
+      break;
+
+    case "shark":
+      modeName[3].innerHTML = name;
+      break;
+  }
+}
+
+//================= Turn images back to normal =================
+function normalImg() {
   title.style.background = 'url("img/capybara.jpg") center left';
   capybaraCarousel.src = capybaraImgAll[0][capybaraIndex];
   axolotlCarousel.src = axolotlImgAll[0][axolotlIndex];
   foxCarousel.src = foxImgAll[0][foxIndex];
   sharkCarousel.src = sharkImgAll[0][sharkIndex];
+}
+
+//Functions for changing colour schemes - variables at top of file
+//================= Normal mode =================
+function normalMode() {
+  //Images
+  normalImg();
 
   for (let i = 0; i < hasColour.length; i++) {
     hasColour[i].style.color = elementColours[i];
@@ -298,12 +333,15 @@ function darkMode() {
   switch (mode) {
     case "dark":
       mode = "normal";
+      buttonTextChange("capybara", "Dark"); //Changes button text
       normalMode();
       break;
 
     default:
       mode = "dark";
+      normalImg();
       //Switches colours so that main background is black with coloured accents
+      buttonTextChange("capybara", "Normal"); //Changes button text
       for (let i = 0; i < hasColour.length; i++) {
         //Change text colour
         switch (elementColours[i]) {
@@ -348,11 +386,13 @@ function invertMode() {
   switch (mode) {
     case "invert":
       mode = "normal";
+      buttonTextChange("axolotl", "Invert"); //Changes button text
       normalMode();
       break;
 
     default:
       mode = "invert";
+      buttonTextChange("axolotl", "Normal"); //Changes button text
       //Inverts all colours
 
       //Images
@@ -435,12 +475,15 @@ function brightMode() {
   switch (mode) {
     case "bright":
       mode = "normal";
+      buttonTextChange("fox", "Bright"); //Changes button text
       normalMode();
       break;
 
     default:
       mode = "bright";
+      normalImg();
       //Switches colours so that main background is black with coloured accents
+      buttonTextChange("fox", "Normal"); //Changes button text
       for (let i = 0; i < hasColour.length; i++) {
         //Change text colour
         switch (elementColours[i]) {
@@ -513,12 +556,15 @@ function coolColourMode() {
   switch (mode) {
     case "coolColour":
       mode = "normal";
+      buttonTextChange("shark", "Cool colour"); //Changes button text
       normalMode();
       break;
 
     default:
       mode = "coolColour";
+      normalImg();
       //Switches colours so that main background is black with coloured accents
+      buttonTextChange("shark", "Normal"); //Changes button text
       for (let i = 0; i < hasColour.length; i++) {
         //Change text colour
         switch (elementColours[i]) {
