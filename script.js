@@ -68,10 +68,13 @@ for (let i = 0; i < linearBackground.length; i++) {
 }
 
 //Image carousel variables
+let index = [0, 0, 0, 0]; //capybara, axolotl, fox, shark (indexes in that order)
+
 const capybaraCarousel = document.querySelector("#capybara-img");
 const axolotlCarousel = document.querySelector("#axolotl-img");
 const foxCarousel = document.querySelector("#fox-img");
 const sharkCarousel = document.querySelector("#shark-img");
+
 const capybaraImg = [
   "img/capybara/capybara-section.jpg",
   "img/capybara/capybara-section2.jpg",
@@ -86,7 +89,6 @@ const capybaraInverted = [
 ];
 //to lessen amount of code - index 0 is normal, index 1 is inverted
 const capybaraImgAll = [capybaraImg, capybaraInverted];
-let capybaraIndex = 0;
 
 const axolotlImg = [
   "img/axolotl/axolotl-section.jpg",
@@ -102,7 +104,6 @@ const axolotlInverted = [
 ];
 //to lessen amount of code - index 0 is normal, index 1 is inverted
 const axolotlImgAll = [axolotlImg, axolotlInverted];
-let axolotlIndex = 0;
 
 const foxImg = [
   "img/fox/fox-section.jpg",
@@ -118,7 +119,6 @@ const foxInverted = [
 ];
 //to lessen amount of code - index 0 is normal, index 1 is inverted
 const foxImgAll = [foxImg, foxInverted];
-let foxIndex = 0;
 
 const sharkImg = [
   "img/shark/shark-section.jpg",
@@ -134,7 +134,9 @@ const sharkInverted = [
 ];
 //to lessen amount of code - index 0 is normal, index 1 is inverted
 const sharkImgAll = [sharkImg, sharkInverted];
-let sharkIndex = 0;
+
+//To lessen code - has all images stored within each section
+const allImg = [capybaraImgAll, axolotlImgAll, foxImgAll, sharkImgAll];
 
 //Functions
 function togglemenu() {
@@ -165,59 +167,25 @@ function topFunction() {
 }
 
 //Switch through images with button click
-//================= Left =================
-function leftImage(section) {
-  let imgIndex;
-  switch (mode) {
-    case "invert":
-      imgIndex = 1;
+//================= Carousel both right and left =================
+function newIndex(indexNum, direction) {
+  switch (direction) {
+    // index[indexNum] represents the index of each section
+    case "left":
+      index[indexNum] === 0
+        ? (index[indexNum] = allImg[indexNum][imgIndex].length - 1)
+        : (index[indexNum] -= 1);
       break;
 
-    default:
-      imgIndex = 0;
-      break;
-  }
-  switch (section) {
-    case "capybara":
-      //Makes sure correct image is displayed
-      capybaraIndex === 0
-        ? (capybaraIndex = capybaraImg.length - 1)
-        : capybaraIndex--;
-
-      //changing image displayed
-      capybaraCarousel.src = capybaraImgAll[imgIndex][capybaraIndex];
-      break;
-
-    case "axolotl":
-      //Makes sure correct image is displayed
-      axolotlIndex === 0
-        ? (axolotlIndex = axolotlImg.length - 1)
-        : axolotlIndex--;
-
-      //changing image displayed
-      axolotlCarousel.src = axolotlImgAll[imgIndex][axolotlIndex];
-      break;
-
-    case "fox":
-      //Makes sure correct image is displayed
-      foxIndex === 0 ? (foxIndex = foxImg.length - 1) : foxIndex--;
-
-      //changing image displayed
-      foxCarousel.src = foxImgAll[imgIndex][foxIndex];
-      break;
-
-    case "shark":
-      //Makes sure correct image is displayed
-      sharkIndex === 0 ? (sharkIndex = sharkImg.length - 1) : sharkIndex--;
-
-      //changing image displayed
-      sharkCarousel.src = sharkImgAll[imgIndex][sharkIndex];
+    case "right":
+      index[indexNum] === allImg[indexNum][imgIndex].length - 1
+        ? (index[indexNum] = 0)
+        : (index[indexNum] += 1);
       break;
   }
 }
 
-//================= right =================
-function rightImage(section) {
+function carousel(section, direction) {
   switch (mode) {
     case "invert":
       imgIndex = 1;
@@ -227,42 +195,36 @@ function rightImage(section) {
       imgIndex = 0;
       break;
   }
-
   switch (section) {
     case "capybara":
       //Makes sure correct image is displayed
-      capybaraIndex === capybaraImg.length - 1
-        ? (capybaraIndex = 0)
-        : capybaraIndex++;
-
-      //changing image displayed
-      capybaraCarousel.src = capybaraImgAll[imgIndex][capybaraIndex];
+      newIndex(0, direction);
+      //changing image displayed - index[0] is the index for capybara
+      capybaraCarousel.src = allImg[0][imgIndex][index[0]];
       break;
 
     case "axolotl":
       //Makes sure correct image is displayed
-      axolotlIndex === axolotlImg.length - 1
-        ? (axolotlIndex = 0)
-        : axolotlIndex++;
+      newIndex(1, direction);
 
       //changing image displayed
-      axolotlCarousel.src = axolotlImgAll[imgIndex][axolotlIndex];
+      axolotlCarousel.src = allImg[1][imgIndex][index[1]];
       break;
 
     case "fox":
       //Makes sure correct image is displayed
-      foxIndex === foxImg.length - 1 ? (foxIndex = 0) : foxIndex++;
+      newIndex(2, direction);
 
       //changing image displayed
-      foxCarousel.src = foxImgAll[imgIndex][foxIndex];
+      foxCarousel.src = allImg[2][imgIndex][index[2]];
       break;
 
     case "shark":
       //Makes sure correct image is displayed
-      sharkIndex === sharkImg.length - 1 ? (sharkIndex = 0) : sharkIndex++;
+      newIndex(3, direction);
 
       //changing image displayed
-      sharkCarousel.src = sharkImgAll[imgIndex][sharkIndex];
+      sharkCarousel.src = allImg[3][imgIndex][index[3]];
       break;
   }
 }
