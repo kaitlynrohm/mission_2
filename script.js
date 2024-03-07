@@ -45,63 +45,6 @@ for (let i = 0; i < cssHoverVariables.length; i++) {
 //all colours
 const allColours = [...backgroundColours, ...hoverColours];
 
-// //List with all hover elements (colour is text change, background is background change)
-// const hoverColour = document.querySelectorAll(".hover-colour");
-// const hoverBackgroundColour = document.querySelectorAll(
-//   ".hover-background-colour"
-// );
-
-// //Array with colour of background/text
-// let elementHoverColours = []; //Colour of the elements in same order as hoverColour has elements
-
-// for (let i = 0; i < hoverColour.length; i++) {
-//   elementHoverColours.push(getComputedStyle(hoverColour[i]).color);
-// }
-
-// let elementHoverBackgroundColours = []; //bg colour of the elements in same order as hoverBackgroundColour has elements
-
-// for (let i = 0; i < hoverBackgroundColour.length; i++) {
-//   elementHoverBackgroundColours.push(
-//     getComputedStyle(hoverBackgroundColour[i]).backgroundColor
-//   );
-// }
-
-// //Variables for colour scheme changes - working
-// const title = document.querySelector("#title"); //for title background
-// const hasColour = document.querySelectorAll(".colour"); //All elements that have a colour atribute (text)
-// const hasBackgroundColour = document.querySelectorAll(".background-colour"); //All elements with background colour
-// const hasBorderColour = document.querySelectorAll(".border-colour"); //All elements with a border colour
-// const linearBackground = document.querySelectorAll(".linear-background"); //Selects the header
-
-// //Creating lists with styles at same place as the elements - working
-// let elementColours = []; //Will have the colour of the elements in same order as hasColour has elements
-
-// for (let i = 0; i < hasColour.length; i++) {
-//   elementColours.push(getComputedStyle(hasColour[i]).color);
-// }
-
-// let elementBackgroundColours = []; //Will have the background colour of the elements in same order as hasBackgroundColour has elements
-
-// for (let i = 0; i < hasBackgroundColour.length; i++) {
-//   elementBackgroundColours.push(
-//     getComputedStyle(hasBackgroundColour[i]).backgroundColor
-//   );
-// }
-// console.log(elementBackgroundColours);
-// let elementBorders = []; //Will have the border style of the elements in same order as hasBorder has elements
-
-// for (let i = 0; i < hasBorderColour.length; i++) {
-//   elementBorders.push(getComputedStyle(hasBorderColour[i]).border);
-// }
-
-// let elementlinearBackground = []; //Will have the border style of the elements in same order as hasBorder has elements
-
-// for (let i = 0; i < linearBackground.length; i++) {
-//   elementlinearBackground.push(
-//     getComputedStyle(linearBackground[i]).background
-//   );
-// }
-
 //Image carousel variables
 let index = [0, 0, 0, 0]; //capybara, axolotl, fox, shark (indexes in that order)
 
