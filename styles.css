@@ -5,17 +5,36 @@
   padding: 0;
 }
 
+/* Colour variables */
+:root {
+  --text-colour: #36072a;
+  /* background colours */
+  --back-colour1: #f1e8b8;
+  --back-colour2: #ffc2cc;
+  --back-colour3: #a5ccf3;
+  --back-colour4: #f8b6a0;
+
+  /* hover-colours */
+  --hover-colour1: #2764a0;
+  --hover-colour2: #f1e8b8;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #36072a;
+  color: var(--text-colour);
 }
 
 header {
-  background: linear-gradient(#f1e8b8, #ffc2cc, #a5ccf3, #f8b6a0);
+  background: linear-gradient(
+    var(--back-colour1),
+    var(--back-colour2),
+    var(--back-colour3),
+    var(--back-colour4)
+  );
 }
 
 /* Styles for element types */
@@ -49,8 +68,8 @@ button {
   font-family: inherit;
   font-size: 1.3vw;
   width: 25%;
-  border: 2px solid #36072a;
-  background-color: #f8b6a0;
+  border: 2px solid var(--text-colour);
+  background-color: var(--back-colour4);
   color: inherit;
   margin: 2vw;
   padding: 0.5vw;
@@ -58,7 +77,7 @@ button {
 }
 
 button:hover {
-  background-color: #f1e8b8;
+  background-color: var(--hover-colour2);
 }
 
 /* Common styles */
@@ -69,8 +88,8 @@ button:hover {
 .btn,
 btn-img {
   text-decoration: none;
-  border: 2px solid #f8b6a0;
-  background-color: #f8b6a0;
+  border: 2px solid var(--back-colour4);
+  background-color: var(--back-colour4);
   color: inherit;
   margin: 2vw 0.3vw;
   padding: 2px;
@@ -85,7 +104,7 @@ btn-img {
 
 .btn:hover,
 .btn-img:hover {
-  background-color: #f1e8b8;
+  background-color: var(--hover-colour2);
 }
 
 .grid {
@@ -178,7 +197,7 @@ nav > ul > li > a {
 }
 
 nav ul li a:hover {
-  color: #ff4766;
+  color: var(--hover-colour1);
 }
 
 /* Back to top button */
@@ -188,8 +207,8 @@ nav ul li a:hover {
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
-  background-color: #36072a; /* Set a background color */
-  color: #ffc2cc;
+  background-color: var(--text-colour); /* Set a background color */
+  color: var(--back-colour2);
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 5px 0px; /* Some padding */
   border-radius: 10px;
@@ -198,7 +217,7 @@ nav ul li a:hover {
 }
 
 #to-top:hover {
-  background-color: #86156a;
+  background-color: var(--hover-colour1);
 }
 
 /* Title section styles */
@@ -206,7 +225,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: center;
   text-align: center;
-  background: url(img/capybara.jpg) #ffc2cc center left repeat;
+  background: url(img/capybara.jpg) var(--back-colour2) center left repeat;
   background-size: 100vw 80vw;
   /* animation to scroll and change background to css code */
   animation: title-background 8s 1;
@@ -215,41 +234,41 @@ nav ul li a:hover {
 
 @keyframes title-background {
   12.5% {
-    background: url(img/axolotl.jpg) #ffc2cc bottom left;
+    background: url(img/axolotl.jpg) var(--back-colour2) bottom left;
     background-size: 100vw 80vw;
   }
   25% {
-    background: url(img/axolotl.jpg) #a5ccf3 top left;
+    background: url(img/axolotl.jpg) var(--back-colour3) top left;
     background-size: 100vw 80vw;
   }
   37.5% {
-    background: url(img/fox.webp) #ffc2cc bottom left;
+    background: url(img/fox.webp) var(--back-colour2) bottom left;
     background-size: 100vw 67vw;
   }
   50% {
-    background: url(img/fox.webp) #a5ccf3 top left;
+    background: url(img/fox.webp) var(--back-colour3) top left;
     background-size: 100vw 67vw;
   }
   62.5% {
-    background: url(img/shark.avif) #ffc2cc bottom left;
+    background: url(img/shark.avif) var(--back-colour2) bottom left;
     background-size: 100vw 56vw;
   }
   75% {
-    background: url(img/shark.avif) #a5ccf3 top left;
+    background: url(img/shark.avif) var(--back-colour3) top left;
     background-size: 100vw 56vw;
   }
   87.5% {
-    background: url(img/capybara.jpg) #ffc2cc bottom left;
+    background: url(img/capybara.jpg) var(--back-colour2) bottom left;
     background-size: 100vw 80vw;
   }
   100% {
-    background: url(img/capybara.jpg) #a5ccf3 center left;
+    background: url(img/capybara.jpg) var(--back-colour3) center left;
     background-size: 100vw 80vw;
   }
 }
 
 #banner {
-  background-color: #a5ccf3;
+  background-color: var(--back-colour3);
   width: 56%;
   height: 8vw;
   flex-wrap: wrap;
@@ -264,22 +283,22 @@ nav ul li a:hover {
 
 /* Capybara */
 #capybara {
-  background-color: #f1e8b8;
+  background-color: var(--back-colour1);
 }
 
 /* Axolotl section */
 #axolotl {
-  background-color: #ffc2cc;
+  background-color: var(--back-colour2);
 }
 
 /* Fox section */
 #foxes {
-  background-color: #a5ccf3;
+  background-color: var(--back-colour3);
 }
 
 /* Shark section */
 #sharks {
-  background-color: #f8b6a0;
+  background-color: var(--back-colour4);
 }
 
 /* Responsive webpage styles */
@@ -299,7 +318,12 @@ nav ul li a:hover {
 
   nav ul {
     width: 50%;
-    background: linear-gradient(#f1e8b8, #ffc2cc, #a5ccf3, #f8b6a0);
+    background: linear-gradient(
+      var(--back-colour1),
+      var(--back-colour2),
+      var(--back-colour3),
+      var(--back-colour4)
+    );
     top: 70px;
     right: 0;
     z-index: 2;
